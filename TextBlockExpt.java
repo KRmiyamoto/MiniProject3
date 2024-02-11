@@ -1,3 +1,7 @@
+/**
+ * THESE WILL NEED TO GET REORGANIZED AND EXPANDED FOR OUR TESTING FILE.
+ */
+
 import java.io.PrintWriter;
 
 public class TextBlockExpt {
@@ -35,11 +39,25 @@ public class TextBlockExpt {
     // Test Centered and Truncate Together
     TBUtils.print(pen, new BoxedBlock (new Centered(test, 20)));
     TBUtils.print(pen, new BoxedBlock(new Truncated(new Centered(test, 20), 13)));
-*/
+
     // Test RightJustified
     TBUtils.print(pen, new BoxedBlock(rjVert));
-
     TBUtils.print(pen, new BoxedBlock(new RightJustified(vert, 10)));
+
+    // Test VerticallyFlipped
+    TBUtils.print(pen, test);
+    TBUtils.print(pen, new VerticallyFlipped(test));
+    TBUtils.print(pen, centeredVert);
+    TBUtils.print(pen, new VerticallyFlipped(centeredVert));
+
+    // Test HorizontallyFlipped
+    TBUtils.print(pen, test);
+    TBUtils.print(pen, new HorizontallyFlipped(test));
+    TBUtils.print(pen, centeredVert);
+    TBUtils.print(pen, new HorizontallyFlipped(centeredVert));
+*/
+    // Test MakeList
+    TBUtils.print(pen, new MakeList(vert));
   } // main
   
 } // TextBlockExpt

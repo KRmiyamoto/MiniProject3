@@ -40,7 +40,27 @@ public class TextBlockTests {
    * with maxWidth > this.contents.width()
    * with Centered
    * with RightJustified
-   */
+   
+    pen.println("Trucated Tests");
+    pen.println("with basic TextBlock: ");
+    TBUtils.print(pen, new Truncated(basic, 7));
+    pen.println("with BoxedBlock: ");
+    TBUtils.print(pen, new Truncated(boxedBasic, 10));
+    pen.println("with HComposition: ");
+    TBUtils.print(pen, new Truncated(hComp, 15));
+    pen.println("with VComposition: ");
+    TBUtils.print(pen, new Truncated(vComp, 10));
+    pen.println("with maxWith == 0: ");
+    TBUtils.print(pen, new Truncated(basic, 0));
+    pen.println("with maxWidth == this.contents.width(): ");
+    TBUtils.print(pen, new Truncated(boxedBasic, boxedBasic.width()));
+    pen.println("with maxWidth > this.contents.width(): ");
+    TBUtils.print(pen, new Truncated(boxedBasic, boxedBasic.width()*2));
+    pen.println("with Centered, then Boxed: ");
+    TBUtils.print(pen, new BoxedBlock(new Truncated(center, 16)));
+    pen.println("with RightJustified, then Boxed: ");
+    TBUtils.print(pen, new BoxedBlock(new Truncated(rightJ, 12)));
+  */ 
 
   /**
    * Centered:
@@ -52,7 +72,25 @@ public class TextBlockTests {
    * with maxWidth < this.contents.width()
    * with Truncated
    * with RightJustified
-   */
+   
+    pen.println("Centered Tests");
+    pen.println("with basic TextBlock: ");
+    TBUtils.print(pen, new Centered(basic, 15));
+    pen.println("with BoxedBlock: ");
+    TBUtils.print(pen, new Centered(boxedBasic, 20));
+    pen.println("with HComposition: ");
+    TBUtils.print(pen, new Centered(hComp, 30));
+    pen.println("with VComposition: ");
+    TBUtils.print(pen, new Centered(vComp, 15));
+    pen.println("with maxWidth == this.contents.width(): ");
+    TBUtils.print(pen, new Centered(basic, basic.width()));
+    pen.println("with maxWidth < this.contents.width(): ");
+    TBUtils.print(pen, new Centered(boxedBasic, boxedBasic.width() - 2));
+    pen.println("with Truncated, then Boxed: ");
+    TBUtils.print(pen, new BoxedBlock(new Centered(trunc, 16)));
+    pen.println("with RightJustified, then Boxed: ");
+    TBUtils.print(pen, new BoxedBlock(new Centered(rightJ, 25)));
+  */ 
 
   /**
    * RightJustified:
@@ -64,7 +102,25 @@ public class TextBlockTests {
    * with maxWidth < this.contents.width()
    * with Centered
    * with Truncated
-   */
+   
+    pen.println("RightJustified Tests");
+    pen.println("with basic TextBlock: ");
+    TBUtils.print(pen, new RightJustified(basic, 15));
+    pen.println("with BoxedBlock: ");
+    TBUtils.print(pen, new RightJustified(boxedBasic, 20));
+    pen.println("with HComposition: ");
+    TBUtils.print(pen, new RightJustified(hComp, 30));
+    pen.println("with VComposition: ");
+    TBUtils.print(pen, new RightJustified(vComp, 15));
+    pen.println("with maxWidth == this.contents.width(): ");
+    TBUtils.print(pen, new RightJustified(basic, basic.width()));
+    pen.println("with maxWidth < this.contents.width(): ");
+    TBUtils.print(pen, new RightJustified(boxedBasic, boxedBasic.width() - 2));
+    pen.println("with Truncated, then Boxed: ");
+    TBUtils.print(pen, new BoxedBlock(new RightJustified(trunc, 16)));
+    pen.println("with Centered, then Boxed: ");
+    TBUtils.print(pen, new BoxedBlock(new RightJustified(center, 25)));
+  */
 
   /**
    * HorizontallyFlipped: 
@@ -75,6 +131,22 @@ public class TextBlockTests {
    * with Centered
    * with Truncated
    * with VerticallyFlipped
+
+    pen.println("HorizontallyFlipped Tests");
+    pen.println("with basic TextBlock: ");
+    TBUtils.print(pen, new HorizontallyFlipped(basic));
+    pen.println("with BoxedBlock: ");
+    TBUtils.print(pen, new HorizontallyFlipped(boxedBasic));
+    pen.println("with HComposition: ");
+    TBUtils.print(pen, new HorizontallyFlipped(hComp));
+    pen.println("with VComposition: ");
+    TBUtils.print(pen, new HorizontallyFlipped(vComp));
+    pen.println("with Centered");
+    TBUtils.print(pen, new HorizontallyFlipped(center));
+    pen.println("with Truncated: ");
+    TBUtils.print(pen, new HorizontallyFlipped(trunc));
+    pen.println("with VerticallyFlipped: ");
+    TBUtils.print(pen, new HorizontallyFlipped(new VerticallyFlipped(vComp)));
    */
 
   /**
@@ -86,6 +158,22 @@ public class TextBlockTests {
    * with Centered
    * with Truncated
    * with HorizontallyFlipped
+
+  pen.println("VerticallyFlipped Tests");
+  pen.println("with basic TextBlock: ");
+  TBUtils.print(pen, new VerticallyFlipped(basic));
+  pen.println("with BoxedBlock: ");
+  TBUtils.print(pen, new VerticallyFlipped(boxedBasic));
+  pen.println("with HComposition: ");
+  TBUtils.print(pen, new VerticallyFlipped(hComp));
+  pen.println("with VComposition: ");
+  TBUtils.print(pen, new VerticallyFlipped(vComp));
+  pen.println("with Centered");
+  TBUtils.print(pen, new VerticallyFlipped(center));
+  pen.println("with Truncated: ");
+  TBUtils.print(pen, new VerticallyFlipped(trunc));
+  pen.println("with HorizontallyFlipped: ");
+  TBUtils.print(pen, new VerticallyFlipped(new HorizontallyFlipped(vComp)));
    */
 
   /**
@@ -99,6 +187,25 @@ public class TextBlockTests {
     * with HorizontallyFlipped
     * with VerticallyFlipped
     */
+    pen.println("MakeList Tests");
+    pen.println("with basic TextBlock: ");
+    TBUtils.print(pen, new MakeList(basic));
+    pen.println("with BoxedBlock: ");
+    TBUtils.print(pen, new MakeList(boxedBasic));
+    pen.println("with HComposition: ");
+    TBUtils.print(pen, new MakeList(hComp));
+    pen.println("with VComposition: ");
+    TBUtils.print(pen, new MakeList(vComp));
+    pen.println("with Centered");
+    TBUtils.print(pen, new MakeList(center));
+    pen.println("with Truncated: ");
+    TBUtils.print(pen, new MakeList(trunc));
+    pen.println("with HorizontallyFlipped: ");
+    TBUtils.print(pen, new HorizontallyFlipped(new MakeList(vComp)));
+    pen.println("with VerticallyFlipped: ");
+    TBUtils.print(pen, new VerticallyFlipped(new MakeList(vComp)));
+    pen.println("with taller block: ");
+    TBUtils.print(pen, new MakeList(new VComposition(vComp, vComp)));
 
   } // main
 } // TextBlockTests

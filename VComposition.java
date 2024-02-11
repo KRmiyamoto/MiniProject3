@@ -84,4 +84,12 @@ public class VComposition implements TextBlock {
     return Math.max(this.top.width(), this.bottom.width());
   } // width()
 
+  /**
+   * Gets contents of constituent TextBlocks within the given TextBlock.
+   */
+  public Object[] getContents() {
+    Object[] contents = {TBUtils.toString(this.top), TBUtils.toString(this.bottom)};
+    return contents;
+  } //getContents()
+
 } // class VComposition

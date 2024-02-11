@@ -2,6 +2,8 @@
  * Simple blocks of text for a lab on polymorphism
  * 
  * @author Samuel A. Rebelsky
+ * @author Lucas Willett
+ * @author Keely Miyamoto
  */
 public interface TextBlock {
   // +---------+-----------------------------------------------------------
@@ -25,5 +27,10 @@ public interface TextBlock {
    * Determine how many columns are in the block.
    */
   public int width();
+
+  /**
+   * Gets contents of constituent TextBlocks within the given TextBlock.
+   */
+  public Object[] getContents();
 
 } // interface TextBlock

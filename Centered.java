@@ -63,5 +63,13 @@ public class Centered implements TextBlock {
     int buffer = (this.maxWidth - this.contents.width()) / 2;
     return this.contents.width() + (2 * buffer);
   } // width()
-
+  
+  /**
+   * Gets contents of constituent TextBlocks within the given TextBlock.
+   */
+  public Object[] getContents() {
+    Object[] contents = {TBUtils.toString(this.contents)};
+    return contents;
+  } //getContents()
+  
 } // Centered

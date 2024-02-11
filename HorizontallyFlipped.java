@@ -52,4 +52,13 @@ public class HorizontallyFlipped implements TextBlock {
   public int width() {
     return this.contents.width();
   } // width()
+
+  /**
+   * Gets contents of constituent TextBlocks within the given TextBlock.
+   */
+  public Object[] getContents() {
+    Object[] contents = {TBUtils.toString(this.contents)};
+    return contents;
+  } //getContents()
+
 } // HorizontallyFlipped

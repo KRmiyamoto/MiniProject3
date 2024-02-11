@@ -48,4 +48,12 @@ public class VerticallyFlipped implements TextBlock {
     return this.contents.width();
   } // width()
 
+  /**
+   * Gets contents of constituent TextBlocks within the given TextBlock.
+   */
+  public Object[] getContents() {
+    Object[] contents = {TBUtils.toString(this.contents)};
+    return contents;
+  } //getContents()
+
 } // VerticallyFlipped

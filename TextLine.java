@@ -55,4 +55,16 @@ public class TextLine implements TextBlock {
     return this.line.length();
   } // width()
 
+  /**
+   * Gets contents of constituent TextBlocks within the given TextBlock.
+   * 
+   * Note: The 'contents' TextLine must be identical for each TextLine, in order for
+   * eqv() to report that two distinct basic block were built the same. That is, the 'contents'
+   * of a TextLine report its type/class, not its actual constituent text.
+   */
+  public Object[] getContents() {
+    Object[] contents = {"TextLine"};
+    return contents;
+  } //getContents()
+
 } // class TextLine

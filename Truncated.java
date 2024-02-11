@@ -58,4 +58,12 @@ public class Truncated implements TextBlock{
     return this.maxWidth;
   } // width()
 
+  /**
+   * Gets contents of constituent TextBlocks within the given TextBlock.
+   */
+  public Object[] getContents() {
+    Object[] contents = {TBUtils.toString(this.contents)};
+    return contents;
+  } //getContents()
+
 } // Truncated

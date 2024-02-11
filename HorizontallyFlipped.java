@@ -1,5 +1,8 @@
 /**
  * Given a text block, rearranges horizontally.
+ * 
+ * @author Keely Miyamoto
+ * @author Lucas Willett
  */
 public class HorizontallyFlipped implements TextBlock {
   // Fields

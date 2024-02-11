@@ -2,6 +2,9 @@
  * Given a text block, returns a 'cascading list': Each line is bulletted, 
  * and indentation increases by 2 spaces per line for the first half of the lines.
  * Indentation decreases by 2 spaces per line for the next half of the lines.
+ * 
+ * @author Keely Miyamoto
+ * @author Lucas Willett
  */
 public class MakeList implements TextBlock {
   // Fields

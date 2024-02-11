@@ -1,6 +1,9 @@
 /**
  * Given a text block and a maximum width, builds a new block 
  * that truncates the input block to that width.
+ * 
+ * @author Keely Miyamoto
+ * @author Lucas Willett
  */
 
 public class Truncated implements TextBlock{

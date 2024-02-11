@@ -1,5 +1,8 @@
 /**
  * Given a text block, rearranges vertically.
+ * 
+ * @author Keely Miyamoto
+ * @author Lucas Willett
  */
 public class VerticallyFlipped implements TextBlock {
   // Fields

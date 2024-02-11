@@ -1,6 +1,9 @@
 /**
  * Given a text block and a width, builds a new block 
  * that right-justifies the input block within that width.
+ * 
+ * @author Keely Miyamoto
+ * @author Lucas Willett
  */
 public class RightJustified implements TextBlock {
   // Fields

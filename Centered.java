@@ -5,6 +5,9 @@
  * Note that Centered "rounds down" to achieve centering. (That is, if the given
  * block has length 5 and is to be centered in width 10, there will be 2 spaces on
  * either side of the block.)
+ * 
+ * @author Keely Miyamoto
+ * @author Lucas Willett
  */
 public class Centered implements TextBlock {
   // Fields
@@ -19,9 +22,9 @@ public class Centered implements TextBlock {
   /**
    * Build a Centered TextBlock of given width and contents.
    */
-  public Centered(TextBlock _contents, int widthParam) {
+  public Centered(TextBlock _contents, int _maxWidth) {
     this.contents = _contents;
-    this.maxWidth = widthParam;
+    this.maxWidth = _maxWidth;
   } // Centered(String, int)
 
   // Methods

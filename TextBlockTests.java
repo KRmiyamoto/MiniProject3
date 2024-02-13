@@ -8,8 +8,7 @@
 
  import static org.junit.jupiter.api.Assertions.assertEquals;
  import org.junit.jupiter.api.Test;
-
-import java.io.PrintWriter;
+ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TextBlockTests {
 
@@ -32,7 +31,7 @@ public class TextBlockTests {
    * two different VComps (false)
    * two identical VComps (true)
    * a VComp and a double-VerticallyFlipped vComp (true)
-
+   */
   @Test
   void equalTest1() throws Exception {
     assertEquals(true, TBUtils.equal(new TextLine(""), new TextLine("")), "The contents of 2 empty blocks are equal.");
@@ -62,7 +61,7 @@ public class TextBlockTests {
   void equalTest6() throws Exception {
     assertEquals(true, TBUtils.equal(vComp, new VerticallyFlipped(new VerticallyFlipped(vComp))), "The contents of a VerticalComp and the same double-flipped VerticalComp are equal.");
   } // equalTest6
-   */
+
    /**
    * JUnit tests for TBUtils.eqv():
    * two empty blocks (true)
@@ -72,7 +71,7 @@ public class TextBlockTests {
    * two different VComp, then HFlipped (true)
    * a VComp and a double-VerticallyFlipped vComp (false)
    * a Centered BoxedBlock and a Boxed CenteredBlock (false)
-
+   */
   @Test
   void eqvTest1() throws Exception {
     assertEquals(true, TBUtils.eqv(new TextLine(""), new TextLine("")), "The build of 2 empty blocks is equivalent.");
@@ -107,7 +106,7 @@ public class TextBlockTests {
   void eqvTest7() throws Exception {
     assertEquals(false, TBUtils.eqv(new Centered(rightJ, 20), new RightJustified(center, 15)), "The build of a Centered RightJustified block and a RightJustified CenteredBlock is NOT equivalent.");
   } // eqvTest7
-   */
+
    /**
    * JUnit tests for TBUtils.eq():
    * two empty blocks (false)
@@ -116,7 +115,7 @@ public class TextBlockTests {
    * the same BoxedBlock (true)
    * a VComp and its copy (true)
    * a Truncated Box and its copy (true)
-
+  */
   @Test
   void eqTest1() throws Exception {
     assertEquals(false, TBUtils.eq(new TextLine(""), new TextLine("")), "The memory location of 2 empty blocks is NOT equal.");
@@ -149,7 +148,7 @@ public class TextBlockTests {
     TextBlock truncBoxCopy = truncBox;
     assertEquals(true, TBUtils.eqv(truncBox, truncBoxCopy), "The memory location of a Truncated Box and that of its copy are equivalent.");
   } // eqTest6
-  */
+
   
 
   /** Tests of Truncated, Centered, RightJustified, VerticallyFlipped
@@ -170,8 +169,13 @@ public class TextBlockTests {
    * with RightJustified
     */ 
     @Test
-    void truncTest1() throws Exception {
+    void truncTest0() throws Exception {
       assertEquals("Hello W", trunc.row(0), "Truncated works with a basic TextBlock.");
+    } // truncTest0
+
+    @Test
+    void truncTest1() throws Exception {
+      assertEquals("H", new Truncated(basic, 1).row(0), "Truncated works with a basic TextBlock and width 1.");
     } // truncTest1
 
     @Test
@@ -214,7 +218,7 @@ public class TextBlockTests {
      */
     @Test
     void truncTest8() throws Exception {
-      assertEquals("", new Truncated(basic, basic.width()*2).row(0), "Truncated works as expected with maxWidth > this.contents.width().");
+      assertThrows(Throwable.class, () -> new Truncated(basic, basic.width()*2).row(0));
     } // truncTest8
 
     @Test
@@ -275,7 +279,7 @@ public class TextBlockTests {
      */
     @Test
     void centerTest6() throws Exception {
-      assertEquals("", new Centered(basic, basic.width() - 2).row(0), "Centered works as expected with maxWidth < this.contents.width().");
+      assertThrows(Exception.class, () -> new Centered(basic, basic.width() - 2).row(0));
     } // truncTest6
 
     @Test
@@ -334,7 +338,7 @@ public class TextBlockTests {
      */
     @Test
     void rightJTest6() throws Exception {
-      assertEquals("", new RightJustified(basic, basic.width() - 2).row(0), "RightJustified works as expected with maxWidth < this.contents.width().");
+      assertThrows(Exception.class, () -> new RightJustified(basic, basic.width() - 2).row(0));
     } // rightJTest6
 
     @Test
@@ -523,6 +527,5 @@ public class TextBlockTests {
       assertEquals("  * +-----------+", new MakeList(new VerticallyFlipped(boxedBasic)).row(0), "MakeList works with VerticallyFlipped.");
       assertEquals("    * |Hello World|", new MakeList(new VerticallyFlipped(boxedBasic)).row(1), "MakeList works with VerticallyFlipped.");
     } // makeListTest9
-
 
 } // TextBlockTests

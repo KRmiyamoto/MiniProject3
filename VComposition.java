@@ -2,6 +2,8 @@
  * The vertical composition of two text blocks.
  * 
  * @author Samuel A. Rebelsky
+ * @author Lucas Willett
+ * @author Keely Miyamoto
  */
 public class VComposition implements TextBlock {
   // +--------+------------------------------------------------------------

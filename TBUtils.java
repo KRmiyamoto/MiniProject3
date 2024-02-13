@@ -90,7 +90,7 @@ public class TBUtils {
   /**
    * Method to test equality of TextBlocks: Returns true if
    * t1 and t2 contain the same lines.
-
+   */ 
   static boolean equal(TextBlock t1, TextBlock t2) throws Exception {
     if ((t1.height() != t2.height()) || (t1.width() != t2.width())) {
       return false;
@@ -103,11 +103,11 @@ public class TBUtils {
       return true;
     } // if
   } // equal(TextBlock, TextBlock)
-  */
+  
   /**
    * Method to test equality of TextBlocks: Returns true if
    * t1 and t2 were built in the same way.
-
+   */
   static boolean eqv(TextBlock t1, TextBlock t2) throws Exception {
     if (!((t1.getClass()).equals(t2.getClass()))) {
       return false;
@@ -120,13 +120,13 @@ public class TBUtils {
       return true;
     } // else
   } // eqv(TextBlock, TextBlock)
-   */
+
   /**
    * Method to test equality of TextBlocks: Returns true if
    * t1 and t2 occupy the same memory location.
-
+   */
   static boolean eq(TextBlock t1, TextBlock t2) {
     return t1 == t2;
   } // eq(TextBlock, TextBlock)
-   */
+
 } // class TBUtils

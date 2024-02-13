@@ -1,9 +1,13 @@
 # MiniProject3: Text Layout
 Practice with subtype polymorphism by further extending the text layout example from the text layout lab.
+
 Link: https://github.com/KRmiyamoto/MiniProject3 
 
+
 Authors: Lucas Willett & Keely Miyamoto
+
 Due February 14, 2025
+
 CSC-207-01
 
 

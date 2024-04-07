@@ -1,4 +1,9 @@
 # MiniProject3: Text Layout
+
+
+NOTES FOR RESUBMISSION: Link to GitHub repo should be working properly.
+
+
 Practice with subtype polymorphism by further extending the text layout example from the text layout lab.
 
 Link: https://github.com/KRmiyamoto/MiniProject3 
